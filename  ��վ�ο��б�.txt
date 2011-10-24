@@ -1,0 +1,18 @@
+http://grass.osgeo.org/wiki/GRASS_Help		grass帮助总网站
+http://grass.osgeo.org/wiki/GRASS_Documents	所有的有用文档都在此目录下，如教程(tutorial)、参考手册(manual)和各种实际应用帮助等
+http://grass.osgeo.org/gdp/manuals.php		所有grass版本的参考手册
+http://grass.osgeo.org/wiki/Gis_Concepts	GIS相关概念及grass中对应的实现
+http://grass.osgeo.org/wiki/Faq			grass的FAQ(较常问的问题)
+http://uiwapmds01.nottingham.ac.uk/qcsplace/ondemand/events09/aae138404da8a25d2b274ce1ee/player.HTM#  	此网站中有一些教程视频，但需在windows下的Internet Explorer and Firefox 浏览器中才能查看
+http://grass.osgeo.org/wiki/GRASS_Education_%28Free_GIS_education%29#Teaching_Materials	教程
+http://www-pool.math.tu-berlin.de/~soeren/grass/modules/	样例视频
+http://wiki.osgeo.org/wiki/FOSS_for_GIS_video_tutorials_and_screencasts		osgeo视频库
+http://grass.osgeo.org/applications/index.php	grass应用领域
+http://grass.osgeo.org/wiki/AddOns#r.fuzzy.system	附增命令集
+
+
+邮件列表
+申请邮件列表网址：
+建议使用 Thunderbird邮件阅读器
+
+
