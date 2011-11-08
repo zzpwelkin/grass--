@@ -38,9 +38,7 @@ _exit(ret)
 ret = grass.run_command("g.region", rast='evelation')
 _exit(ret)
 
-ret = grass.run_command("r.shaded.relief", flags='--o',nput='elevation',
-                        output='myenv_shaded',azimuth=90, altitude=50,
-                        zmult=3, scale=2)
+ret = grass.run_command("r.shaded.relief", input='elevation',output='myenv_shaded',azimuth=90, altitude=50,zmult=3, scale=2)
 _exit(ret)
 
 # display the result
@@ -48,7 +46,6 @@ ret = grass.run_command("d.mon", start='wx0')
 _exit(ret)
 ret = grass.run_command("d.rast", map='myenv_shaded')
 _exit(ret)
-ret = grass.run_command("d.hsi", h_map='evelation', i_map='myenv_shaded',
-                        brighten=30)
+ret = grass.run_command("d.his", h_map='elevation', i_map='myenv_shaded',brighten=30)
 sys.exit(status)
 
