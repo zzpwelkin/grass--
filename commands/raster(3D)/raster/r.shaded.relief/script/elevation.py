@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# -*- conding=utf8 -*-
+#!c:\Python25\python.exe
+# -*- encoding=utf8 -*-
 #
 ############################################################################
 #
@@ -17,10 +17,7 @@
 import os
 import sys
 
-# 系统环境设置
-os.altsep="\\"
-sys.path.append('D:\\OSGeo4W\\apps\\grass\\grass-7.0.svn\\etc\\python')
-
+# system enviroment varibles
 #---------------------------------------------------
 def _exit(status):
     if(status):
@@ -29,23 +26,31 @@ def _exit(status):
 from grass.script import core as grass
 
 # change the location and mapsets of workspace 
-ret=grass.run_command("g.gisenv", set='LOCATION_NAME=nc_spm_08')
-_exit(ret)
-ret=grass.run_command("g.gisenv", set='MAPSET=user1')
-_exit(ret)
+gisenv = grass.gisenv()
+if 'nc_spm_08' == gisenv['LOCATION_NAME']:
+    ret=grass.run_command("g.gisenv", set='LOCATION_NAME=nc_spm_08')
+    _exit(ret)
+    if 'user1' == gisenv['MAPSET']:
+        ret=grass.run_command("g.gisenv", set='MAPSET=user1')
+        _exit(ret)
     
 # set current region
-ret = grass.run_command("g.region", rast='evelation')
+ret = grass.run_command("g.region", rast='elevation')
 _exit(ret)
 
-ret = grass.run_command("r.shaded.relief", input='elevation',output='myenv_shaded',azimuth=90, altitude=50,zmult=3, scale=2)
+ret = grass.run_command("r.shaded.relief.py", overwrite=True, input='elevation',output='myenv_shaded',azimuth=90, altitude=50,zmult=3, scale=2)
 _exit(ret)
 
 # display the result
-ret = grass.run_command("d.mon", start='wx0')
-_exit(ret)
-ret = grass.run_command("d.rast", map='myenv_shaded')
-_exit(ret)
-ret = grass.run_command("d.his", h_map='elevation', i_map='myenv_shaded',brighten=30)
-sys.exit(status)
+monitor = 'png'
+grass.run_command("d.mon", start=monitor, output='elevation_shaded')
+
+grass.run_command("d.rast", map='myenv_shaded')
+
+grass.run_command("d.his", h_map='elevation', i_map='myenv_shaded',brighten=30)
+
+# close display monitor
+grass.run_command("d.mon", stop=monitor)
+
+
 

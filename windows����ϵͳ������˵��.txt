@@ -11,12 +11,24 @@ grass本地数据库设置：
 	    
 
 python编写脚本设置：
-	1. grass封装的python脚本路径设置：
-	在安装OSGeo4W的时候并不会将grass的python脚本所在位置设置到python的搜索路径中，所以当在grass环境之外边界python脚本时，首先要加入到python环境变量中，示例如下：
-	    import sys
-	    sys.path.append('D:\\OSGeo4W\\apps\\grass\\grass-7.0.svn\\etc\\python') # 我的OSGeo4W安装在D:\OSGeo4W目录下
-	
+	1. 要设置的系统环境变量：
+	·GISRC		F:\workstation\grass\grassdata\.grassrc70
+	·LD_LIBRARY_PATH D:\OSGeo4W\apps\grass\grass-7.0.svn\lib
+	·PATH 		D:\OSGeo4W\apps\grass\grass-7.0.svn\lib;
+			D:\OSGeo4W\apps\grass\grass-7.0.svn\etc\python;
+			D:\OSGeo4W\apps\grass\grass-7.0.svn\bin;
+			D:\OSGeo4W\apps\grass\grass-7.0.svn\etc;
+			D:\OSGeo4W\apps\grass\grass-7.0.svn\scripts
+	·PYTHONLIB	C:\Python25
+	·PYTHONPATH	D:\OSGeo4W\apps\grass\grass-7.0.svn\etc\python
+
+	·GISBASE		f:\workstation\grass\grassdata
+	·LOCATION_NAME	nc_spm_80
+	·MAPSET          user1
+
 	2. 数据库目录设置：
 	当导入grass.script中的core模块的时候若出现 "空字符串没有len()函数" 的错误时，则说明你没有设置数据库目录，此时打开环境 “设置对话框” 并新建变量，示例如下：
 	    变量名：GISBASE
 	    变量值：F:\workstation\grass\grassdata
+
+

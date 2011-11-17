@@ -1,0 +1,4 @@
+r.fillnull.py 里面涉及到一下内容的应用：
+ 1)  当用户中断操作，如何做清理工作；
+ 2)  python脚本中如何用矩阵运算，也即grass.mapcalc函数的应用；
+ 3)  本程序主要用的v.surf.rst差值方法填充的null区域，所以，涉及到v.surf.rst的用法
